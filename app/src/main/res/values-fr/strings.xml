@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">MadAssistant</string>
+
+    <!-- Tabs -->
+    <string name="tabs_home">MadAssistant</string>
+    <string name="tabs_contacts">Contacts</string>
+    <string name="tabs_settings">Paramètres</string>
+    <string name="tabs_firstAid">Premiers secours</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_configuration">Configuration</string>
+    <string name="settings_theme">Thème</string>
+    <string name="settings_themeDescription">Choisissez votre mode d\'affichage préféré</string>
+    <string name="settings_language">Langue</string>
+    <string name="settings_languageDescription">Sélectionnez votre langue préférée</string>
+    <string name="settings_light">Clair</string>
+    <string name="settings_dark">Sombre</string>
+    <string name="settings_auto">Auto</string>
+    <string name="settings_french">Français</string>
+    <string name="settings_english">Anglais</string>
+    <string name="settings_legal">Informations légales</string>
+    <string name="settings_termsTitle">Conditions d\'utilisation</string>
+    <string name="settings_termsDescription">Mentions légales et conditions</string>
+
+    <!-- Home -->
+    <string name="home_heroTitle">Accéder facilement aux Services d\'urgence à Madagascar</string>
+    <string name="home_heroSubtitle">Votre guide rapide pour les services d\'urgence à Madagascar</string>
+    <string name="home_emergencyServices">Services d\'urgence</string>
+    <string name="home_services_health_title">Santé</string>
+    <string name="home_services_health_description">Contactez les services de santé rapidement.</string>
+    <string name="home_services_security_title">Sécurité</string>
+    <string name="home_services_security_description">Appelez les forces de l\'ordre en un clic.</string>
+    <string name="home_services_fire_title">Incendie</string>
+    <string name="home_services_fire_description">Accédez rapidement aux pompiers.</string>
+    <string name="home_services_other_title">Autres</string>
+    <string name="home_services_other_description">Autres services d\'urgence importants.</string>
+
+    <!-- Contacts -->
+    <string name="contacts_searchPlaceholder">Rechercher des contacts...</string>
+    <string name="contacts_cancel">Annuler</string>
+    <string name="contacts_call">Appeler</string>
+    <string name="contacts_noResults">Aucun contact trouvé</string>
+    <string name="contacts_categories_all">Tout</string>
+    <string name="contacts_categories_health">Santé</string>
+    <string name="contacts_categories_security">Sécurité</string>
+    <string name="contacts_categories_fire">Incendie</string>
+    <string name="contacts_categories_insurance">Assurance</string>
+    <string name="contacts_primary">Principal</string>
+    <string name="contacts_alternative">Alternatif</string>
+    <string name="contacts_third">Troisième</string>
+    <string name="contacts_fourth">Quatrième</string>
+    <string name="contacts_emergency">Urgence</string>
+    <string name="contacts_description">Description</string>
+    <string name="contacts_phoneNumbers">Numéros de téléphone</string>
+    <string name="contacts_email">Email</string>
+    <string name="contacts_location">Localisation</string>
+    <string name="contacts_availability">Disponibilité</string>
+    <string name="contacts_close">Fermer</string>
+
+    <!-- Terms -->
+    <string name="terms_title">Conditions d\'utilisation et Mentions légales</string>
+    <string name="terms_introduction_title">1. Introduction</string>
+    <string name="terms_introduction_content">Bienvenue dans MadAssistant. Cette application a été développée pour fournir un accès rapide aux services d\'urgence à Madagascar. En utilisant cette application, vous acceptez les présentes conditions d\'utilisation.</string>
+    <string name="terms_usage_title">2. Utilisation de l\'application</string>
+    <string name="terms_usage_content">MadAssistant est destiné exclusivement à faciliter l\'accès aux services d\'urgence. L\'application fournit des numéros de téléphone et informations de contact pour les services de santé, sécurité, et pompiers. Les utilisateurs sont responsables de l\'utilisation appropriée de ces informations.</string>
+    <string name="terms_liability_title">3. Responsabilité</string>
+    <string name="terms_liability_content">Les développeurs de MadAssistant ne peuvent être tenus responsables de l\'exactitude des informations de contact ou de la disponibilité des services d\'urgence. En cas d\'urgence réelle, contactez immédiatement les autorités compétentes.</string>
+    <string name="terms_privacy_title">4. Données personnelles</string>
+    <string name="terms_privacy_content">MadAssistant ne collecte aucune donnée personnelle. L\'application fonctionne localement sur votre appareil et ne transmet aucune information à des serveurs externes, sauf lors des appels d\'urgence.</string>
+    <string name="terms_contact_title">5. Contact</string>
+    <string name="terms_contact_content">Pour toute question concernant cette application ou ces conditions d\'utilisation, veuillez contacter l\'équipe de développement de l\'ISPM (Institut Supérieur Polytechnique de Madagascar).</string>
+    <string name="terms_lastUpdated">Dernière mise à jour</string>
+
+    <!-- About -->
+    <string name="about_title">MadAssistant</string>
+    <string name="about_subtitle">Assistant d\'urgence intelligent</string>
+    <string name="about_description">MadAssistant est votre compagnon de sécurité personnel. Accédez rapidement aux services d\'urgence, trouvez les contacts essentiels et obtenez l\'aide dont vous avez besoin en cas de situation critique. Conçu pour Madagascar, adapté à vos besoins.</string>
+    <string name="about_features_quickCall">Appels d\'urgence rapides</string>
+    <string name="about_features_contacts">Contacts d\'urgence organisés</string>
+    <string name="about_features_multilingual">Interface multilingue</string>
+    <string name="about_version">Version</string>
+
+    <!-- First Aid -->
+    <string name="firstAid_title">Premiers secours</string>
+    <string name="firstAid_subtitle">Guide de premiers secours</string>
+    <string name="firstAid_searchPlaceholder">Rechercher des premiers secours...</string>
+    <string name="firstAid_categories_all">Tout</string>
+    <string name="firstAid_categories_respiratory">Respiratoire</string>
+    <string name="firstAid_categories_cardiac">Cardiaque</string>
+    <string name="firstAid_categories_emergency">Urgences</string>
+    <string name="firstAid_callEmergency">Appeler les secours</string>
+    <string name="firstAid_noResults">Aucune procédure trouvée</string>
+</resources>

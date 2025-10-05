@@ -1,0 +1,212 @@
+{
+  "firstAidProcedures": [
+    {
+      "id": 1,
+      "title": "Adult Choking",
+      "description": "1. Encourage the person to cough. 2. If ineffective, give 5 back blows between the shoulder blades. 3. If still ineffective, perform the Heimlich maneuver: stand behind the person, hands joined below the ribs, firm upward thrusts. 4. Alternate back blows and abdominal compressions. 5. Call 117 or 118 if obstruction persists.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 2,
+      "title": "Infant Choking",
+      "description": "1. Place baby face down on your forearm. 2. Give 5 firm back blows between the shoulder blades with the heel of your hand. 3. Turn baby over and give 5 chest compressions with 2 fingers at the center of the chest. 4. Alternate until obstruction clears. 5. If unconscious, begin CPR. 6. Call 117 immediately or contact Espace Medical Ambodivona at 032 02 088 16.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 3,
+      "title": "Cardiac Arrest - Adult CPR",
+      "description": "1. Check consciousness and breathing. 2. Call 117 immediately or contact CHU HJRA at 033 11 890 58. 3. Place hands at center of chest, arms straight. 4. Compressions: 30 firm compressions 5-6 cm deep at 100-120/min. 5. Airway clearance: tilt head back, lift chin. 6. 2 mouth-to-mouth breaths. 7. Continue 30:2 until emergency services arrive.",
+      "category": "Cardiac"
+    },
+    {
+      "id": 4,
+      "title": "Drowning - Rescue",
+      "description": "1. Secure the area, don't put yourself in danger. 2. Remove victim from water while maintaining head and neck. 3. Check consciousness and breathing. 4. If unconscious but breathing: recovery position. 5. If not breathing: CPR immediately. 6. Call 118 (fire department) or 117 (police). 7. Cover victim to prevent hypothermia. 8. Monitor vital signs.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 5,
+      "title": "Fire - Evacuation",
+      "description": "1. Sound the alarm immediately. 2. If small fire: use appropriate extinguisher (CO2 for electrical, foam for liquid). 3. Evacuate crawling under smoke. 4. Close doors behind you. 5. Never take the elevator. 6. Go to assembly point. 7. Call fire department at 118 or 22 250 18. 8. Never open a hot door.",
+      "category": "Emergency"
+    },
+    {
+      "id": 6,
+      "title": "Thermal Burn",
+      "description": "1. Remove heat source and non-stuck clothing. 2. Cool immediately with cold water for 10-20 minutes. 3. Never pop blisters. 4. Cover with clean, dry cloth. 5. For extensive burns (>10% of body): call 117 or contact MM Clinic at 022 235 55. 6. Never put ice, butter, or toothpaste. 7. Monitor for shock signs.",
+      "category": "Emergency"
+    },
+    {
+      "id": 7,
+      "title": "External Bleeding",
+      "description": "1. Protect yourself with gloves. 2. Lay victim down if possible. 3. Apply direct pressure to wound with clean cloth. 4. Maintain compression without releasing. 5. If blood soaks through, add another cloth on top. 6. Elevate limb if possible. 7. Call 117 or contact Espace Medical Ambodivona at 032 02 088 16 if severe bleeding. 8. Monitor consciousness level.",
+      "category": "Emergency"
+    },
+    {
+      "id": 8,
+      "title": "Heart Attack",
+      "description": "1. Put person at rest, semi-sitting position. 2. Loosen tight clothing. 3. If person has prescribed heart medication, help them take it. 4. Call 117 immediately or contact CHU HJRA at 033 11 890 58. 5. Monitor consciousness and breathing. 6. If cardiac arrest: begin CPR. 7. Reassure the person. 8. Prepare medical information.",
+      "category": "Cardiac"
+    },
+    {
+      "id": 9,
+      "title": "Stroke",
+      "description": "1. Recognize signs: facial paralysis, speech trouble, limb weakness. 2. Call 117 immediately or contact CHU HJRA at 033 11 890 58 (absolute emergency). 3. Note time of symptom onset. 4. Lay person down, head slightly elevated. 5. Give nothing to drink or eat. 6. Monitor vital functions. 7. Reassure victim. 8. Prepare medication list.",
+      "category": "Emergency"
+    },
+    {
+      "id": 10,
+      "title": "Asthma Attack",
+      "description": "1. Help person sit, lean slightly forward. 2. Loosen tight clothing. 3. Help use rescue inhaler (bronchodilator). 4. Encourage slow, deep breathing. 5. If no improvement after 3 doses: call 117 or contact Espace Medical Ambodivona at 032 02 088 16. 6. Avoid known triggers. 7. Stay calm to reassure. 8. Semi-sitting position.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 11,
+      "title": "Open Fracture",
+      "description": "1. Don't touch visible bone. 2. Control bleeding by compressing around the wound. 3. Immobilize limb without moving it. 4. Cover wound with sterile cloth. 5. Call 117 immediately or contact CHU HJRA at 033 11 890 58. 6. Monitor for shock signs. 7. Give nothing to drink. 8. Keep victim warm.",
+      "category": "Emergency"
+    },
+    {
+      "id": 12,
+      "title": "Anaphylactic Shock",
+      "description": "1. Call 117 immediately or contact Espace Medical Ambodivona at 032 02 088 16. 2. If epinephrine auto-injector available, help use it. 3. Lay person down, legs elevated. 4. Clear airways. 5. If respiratory arrest: CPR. 6. Identify and remove allergen. 7. Monitor progression. 8. Prepare allergy history.",
+      "category": "Emergency"
+    },
+    {
+      "id": 13,
+      "title": "Seizures",
+      "description": "1. Protect person from injury (remove dangerous objects). 2. Don't put anything in mouth. 3. Place something soft under head. 4. Time the duration of seizure. 5. After seizure: recovery position. 6. Call 117 or contact CHU HJRA at 033 11 890 58 if first seizure, long seizure (>5min), or injury. 7. Stay with person. 8. Reassure upon awakening.",
+      "category": "Emergency"
+    },
+    {
+      "id": 14,
+      "title": "Hypothermia",
+      "description": "1. Move person to shelter from cold. 2. Gently remove wet clothing. 3. Warm gradually with warm blankets. 4. Give warm, sweet drinks if conscious. 5. Monitor breathing and pulse. 6. Call 117 or contact Espace Medical Ambodivona at 032 02 088 16 if severe hypothermia. 7. Avoid rapid rewarming. 8. No alcohol or massage.",
+      "category": "Emergency"
+    },
+    {
+      "id": 15,
+      "title": "Poisoning",
+      "description": "1. Identify toxic substance. 2. Call 117 or contact Espace Medical Ambodivona at 032 02 088 16. 3. Don't induce vomiting unless explicitly told. 4. If substance on skin: rinse thoroughly. 5. If in eyes: rinse for 15 minutes. 6. Keep product packaging. 7. Monitor consciousness level. 8. Recovery position if unconscious.",
+      "category": "Emergency"
+    },
+    {
+      "id": 16,
+      "title": "Hyperventilation",
+      "description": "1. Reassure person, speak calmly. 2. Encourage slow, controlled breathing. 3. Have them breathe into paper bag (not plastic). 4. Help sit comfortably. 5. Clear away crowds. 6. If no improvement: call 117 or contact Espace Medical Ambodivona at 032 02 088 16. 7. Avoid saying 'calm down'. 8. Stay with person.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 17,
+      "title": "Nosebleed",
+      "description": "1. Sit person down, head tilted slightly forward. 2. Pinch nostrils firmly for 10 minutes. 3. Breathe through mouth. 4. Apply cold to bridge of nose. 5. Don't tilt head back. 6. If bleeding persists after 20 minutes: contact MM Clinic at 022 235 55. 7. Avoid blowing nose for 24h. 8. If frequent nosebleeds: medical evaluation.",
+      "category": "Emergency"
+    },
+    {
+      "id": 18,
+      "title": "Infant CPR",
+      "description": "1. Check consciousness by tapping feet. 2. Call 117 immediately or contact Espace Medical Ambodivona at 032 02 088 16. 3. Tilt head back slightly. 4. Compressions: 2 fingers at center of chest, 1/3 of chest thickness. 5. 30 rapid compressions (100-120/min). 6. 2 mouth-to-mouth-nose breaths. 7. Continue 30:2. 8. Check brachial pulse.",
+      "category": "Cardiac"
+    },
+    {
+      "id": 19,
+      "title": "Electrocution",
+      "description": "1. Turn off electricity at main breaker if possible. 2. Don't touch victim if still energized. 3. Move source away with insulating object (dry wood). 4. Once safe, check consciousness and breathing. 5. Call 117 or contact CHU HJRA at 033 11 890 58 even if person seems fine. 6. Monitor for entry and exit burns. 7. Recovery position if unconscious but breathing. 8. CPR if cardiac arrest.",
+      "category": "Emergency"
+    },
+    {
+      "id": 20,
+      "title": "Head Trauma",
+      "description": "1. Keep head and neck immobile. 2. Call 117 immediately or contact CHU HJRA at 033 11 890 58. 3. Monitor consciousness level. 4. If conscious: semi-sitting position. 5. If unconscious: modified recovery position. 6. Control bleeding without direct pressure on fracture. 7. Watch for vomiting. 8. Note behavioral changes.",
+      "category": "Emergency"
+    },
+    {
+      "id": 21,
+      "title": "Foreign Object in Eye",
+      "description": "1. Never rub the eye. 2. Rinse thoroughly with clean water. 3. Pull upper eyelid over lower eyelid. 4. If foreign object visible on eyelid: remove with clean cloth. 5. If object embedded: don't remove. 6. Cover both eyes with bandage. 7. Seek medical attention at MM Clinic 022 235 55 quickly. 8. Avoid eye movements.",
+      "category": "Emergency"
+    },
+    {
+      "id": 22,
+      "title": "Epileptic Seizure",
+      "description": "1. Stay calm and time the seizure. 2. Remove dangerous objects. 3. Place cushion under head. 4. Don't restrain the person. 5. Don't put anything in mouth. 6. After seizure: recovery position. 7. Call 117 or contact CHU HJRA at 033 11 890 58 if seizure >5 minutes or first seizure. 8. Reassure upon awakening, person will be confused.",
+      "category": "Emergency"
+    },
+    {
+      "id": 23,
+      "title": "Allergic Insect Sting",
+      "description": "1. Remove stinger by scraping (not with tweezers). 2. Clean with soap and water. 3. Apply cold. 4. Watch for allergy signs: swelling, breathing difficulties, generalized hives. 5. If known allergy: help use epinephrine auto-injector. 6. If generalized reaction: call 117 or contact Espace Medical Ambodivona at 032 02 088 16. 7. Elevate stung limb. 8. Antihistamine if prescribed.",
+      "category": "Emergency"
+    },
+    {
+      "id": 24,
+      "title": "Deep Wound",
+      "description": "1. Wear protective gloves. 2. Don't remove embedded objects. 3. Control bleeding by compression around object. 4. Stabilize object with bandages. 5. Lay victim down. 6. Call 117 or contact CHU HJRA at 033 11 890 58. 7. Monitor for shock signs. 8. Cover to maintain temperature. 9. Give nothing to drink.",
+      "category": "Emergency"
+    },
+    {
+      "id": 25,
+      "title": "Diabetic Emergency",
+      "description": "1. If conscious and suspected low blood sugar: give fast sugar (sugar cube, honey). 2. If high blood sugar: give water. 3. Help take usual treatment if possible. 4. Monitor progression. 5. If loss of consciousness: recovery position, call 117 or contact Espace Medical Ambodivona at 032 02 088 16. 6. Never force swallowing if unconscious. 7. Look for diabetic bracelet/card. 8. Note time of symptoms.",
+      "category": "Emergency"
+    },
+    {
+      "id": 26,
+      "title": "Myocardial Infarction",
+      "description": "1. Call 117 immediately or contact CHU HJRA at 033 11 890 58 (life-threatening emergency). 2. Position semi-sitting. 3. Loosen tight clothing. 4. If aspirin available and no allergy: have them chew 1 tablet. 5. Help take nitroglycerin if prescribed. 6. Monitor consciousness and breathing. 7. Prepare for CPR if cardiac arrest. 8. Reassure, avoid exertion.",
+      "category": "Cardiac"
+    },
+    {
+      "id": 27,
+      "title": "Overdose/Intoxication",
+      "description": "1. Call 117 immediately or contact Espace Medical Ambodivona at 032 02 088 16. 2. Check consciousness and breathing. 3. Recovery position if unconscious. 4. If respiratory arrest: assisted ventilation. 5. Keep sample of substance. 6. Monitor body temperature. 7. Don't induce vomiting. 8. Prepare information about consumed products and quantities.",
+      "category": "Emergency"
+    },
+    {
+      "id": 28,
+      "title": "Heat Stroke",
+      "description": "1. Move to shade, cool place. 2. Lay down, legs slightly elevated. 3. Remove excess clothing. 4. Cool: damp cloth on forehead, neck, wrists. 5. Give cool water in small sips if conscious. 6. Provide ventilation. 7. Call 117 or contact Espace Medical Ambodivona at 032 02 088 16 if temperature >40°C. 8. Monitor consciousness level.",
+      "category": "Emergency"
+    },
+    {
+      "id": 29,
+      "title": "Partial Airway Obstruction",
+      "description": "1. Encourage vigorous coughing. 2. Lean forward. 3. Don't give back blows if person can still speak/cough. 4. Monitor progression. 5. If obstruction becomes complete: Heimlich maneuver. 6. Call 117 or contact Espace Medical Ambodivona at 032 02 088 16 if respiratory distress. 7. Reassure person. 8. Avoid blind finger sweeps.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 30,
+      "title": "Acute Heart Failure",
+      "description": "1. Sitting position, legs dangling. 2. Call 117 immediately or contact CHU HJRA at 033 11 890 58. 3. Loosen tight clothing. 4. Avoid lying position. 5. Help take usual medications if conscious. 6. Monitor lip coloration (cyanosis). 7. Oxygen if available and trained. 8. Prepare information about ongoing treatments.",
+      "category": "Cardiac"
+    }
+  ],
+  "emergencyNumbers": {
+    "police": "117",
+    "fire": "118",
+    "gendarmerie": "119",
+    "medicalEmergency": "032 02 088 16",
+    "hospitalCHU": "033 11 890 58",
+    "cliniqueMM": "022 235 55"
+  },
+  "categories": [
+    {
+      "id": "Respiratory",
+      "name": "Respiratory Emergencies",
+      "description": "Emergency procedures for respiratory problems and airway obstruction",
+      "color": "#3498db"
+    },
+    {
+      "id": "Cardiac",
+      "name": "Cardiac Emergencies",
+      "description": "Emergency interventions for cardiac and circulatory problems",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "Emergency",
+      "name": "General Emergencies",
+      "description": "Procedures for various emergency situations and trauma",
+      "color": "#f39c12"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">MadAssistant</string>
+
+    <!-- Tabs -->
+    <string name="tabs_home">MadAssistant</string>
+    <string name="tabs_contacts">Contacts</string>
+    <string name="tabs_settings">Settings</string>
+    <string name="tabs_firstAid">First Aid</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_configuration">Configuration</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_themeDescription">Choose your preferred display mode</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_languageDescription">Select your preferred language</string>
+    <string name="settings_light">Light</string>
+    <string name="settings_dark">Dark</string>
+    <string name="settings_auto">Auto</string>
+    <string name="settings_french">French</string>
+    <string name="settings_english">English</string>
+    <string name="settings_legal">Legal Information</string>
+    <string name="settings_termsTitle">Terms of Use</string>
+    <string name="settings_termsDescription">Legal notice and terms</string>
+
+    <!-- Home -->
+    <string name="home_heroTitle">Easy access to Emergency Services in Madagascar</string>
+    <string name="home_heroSubtitle">Your quick guide to emergency services in Madagascar</string>
+    <string name="home_emergencyServices">Emergency Services</string>
+    <string name="home_services_health_title">Health</string>
+    <string name="home_services_health_description">Contact health services quickly.</string>
+    <string name="home_services_security_title">Security</string>
+    <string name="home_services_security_description">Call law enforcement with one click.</string>
+    <string name="home_services_fire_title">Fire</string>
+    <string name="home_services_fire_description">Quickly access firefighters.</string>
+    <string name="home_services_other_title">Other</string>
+    <string name="home_services_other_description">Other important emergency services.</string>
+
+    <!-- Contacts -->
+    <string name="contacts_searchPlaceholder">Search contacts...</string>
+    <string name="contacts_cancel">Cancel</string>
+    <string name="contacts_call">Call</string>
+    <string name="contacts_noResults">No contacts found</string>
+    <string name="contacts_categories_all">All</string>
+    <string name="contacts_categories_health">Health</string>
+    <string name="contacts_categories_security">Security</string>
+    <string name="contacts_categories_fire">Fire</string>
+    <string name="contacts_categories_insurance">Insurance</string>
+    <string name="contacts_primary">Primary</string>
+    <string name="contacts_alternative">Alternative</string>
+    <string name="contacts_third">Third</string>
+    <string name="contacts_fourth">Fourth</string>
+    <string name="contacts_emergency">Emergency</string>
+    <string name="contacts_description">Description</string>
+    <string name="contacts_phoneNumbers">Phone Numbers</string>
+    <string name="contacts_email">Email</string>
+    <string name="contacts_location">Location</string>
+    <string name="contacts_availability">Availability</string>
+    <string name="contacts_close">Close</string>
+
+    <!-- Terms -->
+    <string name="terms_title">Terms of Use and Legal Notice</string>
+    <string name="terms_introduction_title">1. Introduction</string>
+    <string name="terms_introduction_content">Welcome to MadAssistant. This application has been developed to provide quick access to emergency services in Madagascar. By using this application, you agree to these terms of use.</string>
+    <string name="terms_usage_title">2. Application Usage</string>
+    <string name="terms_usage_content">MadAssistant is intended exclusively to facilitate access to emergency services. The application provides phone numbers and contact information for health, security, and fire services. Users are responsible for the appropriate use of this information.</string>
+    <string name="terms_liability_title">3. Liability</string>
+    <string name="terms_liability_content">The developers of MadAssistant cannot be held responsible for the accuracy of contact information or the availability of emergency services. In case of real emergency, immediately contact the competent authorities.</string>
+    <string name="terms_privacy_title">4. Personal Data</string>
+    <string name="terms_privacy_content">MadAssistant does not collect any personal data. The application works locally on your device and does not transmit any information to external servers, except during emergency calls.</string>
+    <string name="terms_contact_title">5. Contact</string>
+    <string name="terms_contact_content">For any questions regarding this application or these terms of use, please contact the development team at ISPM (Institut Supérieur Polytechnique de Madagascar).</string>
+    <string name="terms_lastUpdated">Last updated</string>
+
+    <!-- About -->
+    <string name="about_title">MadAssistant</string>
+    <string name="about_subtitle">Smart Emergency Assistant</string>
+    <string name="about_description">MadAssistant is your personal safety companion. Quickly access emergency services, find essential contacts, and get the help you need in critical situations. Designed for Madagascar, adapted to your needs.</string>
+    <string name="about_features_quickCall">Quick emergency calls</string>
+    <string name="about_features_contacts">Organized emergency contacts</string>
+    <string name="about_features_multilingual">Multilingual interface</string>
+    <string name="about_version">Version</string>
+
+    <!-- First Aid -->
+    <string name="firstAid_title">First Aid</string>
+    <string name="firstAid_subtitle">Essential emergency procedures</string>
+    <string name="firstAid_searchPlaceholder">Search first aid tips...</string>
+    <string name="firstAid_categories_all">All</string>
+    <string name="firstAid_categories_respiratory">Respiratory</string>
+    <string name="firstAid_categories_cardiac">Cardiac</string>
+    <string name="firstAid_categories_emergency">Emergency</string>
+    <string name="firstAid_callEmergency">Call Emergency</string>
+    <string name="firstAid_noResults">No procedures found</string>
+</resources>

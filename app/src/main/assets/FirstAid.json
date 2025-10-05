@@ -1,0 +1,212 @@
+{
+  "firstAidProcedures": [
+    {
+      "id": 1,
+      "title": "Étouffement adulte",
+      "description": "1. Encouragez la personne à tousser. 2. Si inefficace, donnez 5 claques dans le dos entre les omoplates. 3. Si toujours inefficace, effectuez la manœuvre de Heimlich : placez-vous derrière la personne, mains jointes sous les côtes, poussées fermes vers le haut. 4. Alternez claques dans le dos et compressions abdominales. 5. Appelez le 117 ou le 118 si l'obstruction persiste.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 2,
+      "title": "Étouffement nourrisson",
+      "description": "1. Placez le bébé face vers le bas sur votre avant-bras. 2. Donnez 5 claques fermes entre les omoplates avec le talon de la main. 3. Retournez le bébé et donnez 5 compressions thoraciques avec 2 doigts au centre de la poitrine. 4. Alternez jusqu'à désobstruction. 5. Si inconscient, commencez la RCR. 6. Appelez immédiatement le 117 ou contactez l'Espace médical Ambodivona au 032 02 088 16.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 3,
+      "title": "Arrêt cardiaque - RCR adulte",
+      "description": "1. Vérifiez la conscience et la respiration. 2. Appelez le 117 immédiatement ou contactez CHU HJRA au 033 11 890 58. 3. Placez les mains au centre de la poitrine, bras tendus. 4. Compressions : 30 compressions fermes de 5-6 cm de profondeur à 100-120/min. 5. Libération voies aériennes : basculez la tête, soulevez le menton. 6. 2 insufflations bouche-à-bouche. 7. Continuez 30:2 jusqu'à l'arrivée des secours.",
+      "category": "Cardiac"
+    },
+    {
+      "id": 4,
+      "title": "Noyade - sauvetage",
+      "description": "1. Sécurisez la zone, ne vous mettez pas en danger. 2. Sortez la victime de l'eau en maintenant la tête et le cou. 3. Vérifiez conscience et respiration. 4. Si inconsciente mais respire : position latérale de sécurité. 5. Si pas de respiration : RCR immédiatement. 6. Appelez le 118 (pompiers) ou le 117 (police). 7. Couvrez la victime pour éviter l'hypothermie. 8. Surveillez les signes vitaux.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 5,
+      "title": "Incendie - évacuation",
+      "description": "1. Donnez l'alarme immédiatement. 2. Si petit feu : utilisez un extincteur adapté (CO2 pour électrique, mousse pour liquide). 3. Évacuez en rampant sous la fumée. 4. Fermez les portes derrière vous. 5. Ne prenez jamais l'ascenseur. 6. Rejoignez le point de rassemblement. 7. Appelez les pompiers au 118 ou 22 250 18. 8. N'ouvrez jamais une porte chaude.",
+      "category": "Emergency"
+    },
+    {
+      "id": 6,
+      "title": "Brûlure thermique",
+      "description": "1. Retirez la source de chaleur et les vêtements non collés. 2. Refroidissez immédiatement avec de l'eau froide pendant 10-20 minutes. 3. Ne percez jamais les cloques. 4. Couvrez avec un linge propre et sec. 5. Pour brûlures étendues (>10% du corps) : appelez le 117 ou contactez la Clinique MM au 022 235 55. 6. Ne mettez jamais de glaçons, beurre ou dentifrice. 7. Surveillez les signes de choc.",
+      "category": "Emergency"
+    },
+    {
+      "id": 7,
+      "title": "Hémorragie externe",
+      "description": "1. Protégez-vous avec des gants. 2. Allongez la victime si possible. 3. Comprimez directement la plaie avec un linge propre. 4. Maintenez la compression sans relâcher. 5. Si le sang traverse, ajoutez un autre linge par-dessus. 6. Surélevez le membre si possible. 7. Appelez le 117 ou l'Espace médical Ambodivona au 032 02 088 16 si hémorragie importante. 8. Surveillez l'état de conscience.",
+      "category": "Emergency"
+    },
+    {
+      "id": 8,
+      "title": "Malaise cardiaque",
+      "description": "1. Mettez la personne au repos, position demi-assise. 2. Desserrez les vêtements serrés. 3. Si la personne a des médicaments cardiaques prescrits, aidez-la à les prendre. 4. Appelez le 117 immédiatement ou contactez CHU HJRA au 033 11 890 58. 5. Surveillez la conscience et la respiration. 6. Si arrêt cardiaque : commencez la RCR. 7. Rassurez la personne. 8. Préparez les informations médicales.",
+      "category": "Cardiac"
+    },
+    {
+      "id": 9,
+      "title": "AVC - Accident Vasculaire Cérébral",
+      "description": "1. Reconnaissez les signes : paralysie faciale, trouble de la parole, faiblesse d'un membre. 2. Appelez le 117 immédiatement ou contactez CHU HJRA au 033 11 890 58 (urgence absolue). 3. Notez l'heure d'apparition des symptômes. 4. Allongez la personne, tête légèrement surélevée. 5. Ne donnez rien à boire ni à manger. 6. Surveillez les fonctions vitales. 7. Rassurez la victime. 8. Préparez la liste des médicaments.",
+      "category": "Emergency"
+    },
+    {
+      "id": 10,
+      "title": "Crise d'asthme",
+      "description": "1. Aidez la personne à s'asseoir, penchez-la légèrement vers l'avant. 2. Desserrez les vêtements serrés. 3. Aidez à utiliser l'inhalateur de secours (bronchodilatateur). 4. Encouragez une respiration lente et profonde. 5. Si pas d'amélioration après 3 prises : appelez le 117 ou contactez l'Espace médical Ambodivona au 032 02 088 16. 6. Évitez les déclencheurs connus. 7. Restez calme pour rassurer. 8. Position semi-assise.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 11,
+      "title": "Fracture ouverte",
+      "description": "1. Ne touchez pas l'os apparent. 2. Contrôlez l'hémorragie en comprimant autour de la plaie. 3. Immobilisez le membre sans le déplacer. 4. Couvrez la plaie avec un linge stérile. 5. Appelez le 117 immédiatement ou contactez CHU HJRA au 033 11 890 58. 6. Surveillez les signes de choc. 7. Ne donnez rien à boire. 8. Gardez la victime au chaud.",
+      "category": "Emergency"
+    },
+    {
+      "id": 12,
+      "title": "Choc anaphylactique",
+      "description": "1. Appelez le 117 immédiatement ou contactez l'Espace médical Ambodivona au 032 02 088 16. 2. Si auto-injecteur d'adrénaline disponible, aidez à l'utiliser. 3. Allongez la personne, jambes surélevées. 4. Libérez les voies respiratoires. 5. Si arrêt respiratoire : RCR. 6. Identifiez et éloignez l'allergène. 7. Surveillez l'évolution. 8. Préparez les antécédents allergiques.",
+      "category": "Emergency"
+    },
+    {
+      "id": 13,
+      "title": "Convulsions",
+      "description": "1. Protégez la personne des blessures (éloignez objets dangereux). 2. Ne mettez rien dans la bouche. 3. Placez quelque chose de mou sous la tête. 4. Chronométrez la durée de la crise. 5. Après la crise : position latérale de sécurité. 6. Appelez le 117 ou contactez CHU HJRA au 033 11 890 58 si première crise, crise longue (>5min) ou blessure. 7. Restez près de la personne. 8. Rassurez au réveil.",
+      "category": "Emergency"
+    },
+    {
+      "id": 14,
+      "title": "Hypothermie",
+      "description": "1. Mettez la personne à l'abri du froid. 2. Retirez délicatement les vêtements mouillés. 3. Réchauffez progressivement avec couvertures chaudes. 4. Donnez des boissons chaudes sucrées si consciente. 5. Surveillez la respiration et le pouls. 6. Appelez le 117 ou contactez l'Espace médical Ambodivona au 032 02 088 16 si hypothermie sévère. 7. Évitez le réchauffement trop rapide. 8. Pas d'alcool ni de massage.",
+      "category": "Emergency"
+    },
+    {
+      "id": 15,
+      "title": "Empoisonnement",
+      "description": "1. Identifiez la substance toxique. 2. Appelez le 117 ou contactez l'Espace médical Ambodivona au 032 02 088 16. 3. Ne faites pas vomir sauf si explicitement demandé. 4. Si substance sur la peau : rincez abondamment. 5. Si dans les yeux : rincez 15 minutes. 6. Conservez l'emballage du produit. 7. Surveillez l'état de conscience. 8. Position latérale de sécurité si inconscient.",
+      "category": "Emergency"
+    },
+    {
+      "id": 16,
+      "title": "Hyperventilation",
+      "description": "1. Rassurez la personne, parlez calmement. 2. Encouragez une respiration lente et contrôlée. 3. Faites respirer dans un sac en papier (pas plastique). 4. Aidez à s'asseoir confortablement. 5. Éloignez la foule. 6. Si pas d'amélioration : appelez le 117 ou contactez l'Espace médical Ambodivona au 032 02 088 16. 7. Évitez de dire 'calmez-vous'. 8. Restez avec la personne.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 17,
+      "title": "Saignement de nez",
+      "description": "1. Asseyez la personne, tête légèrement penchée vers l'avant. 2. Pincez fermement les narines pendant 10 minutes. 3. Respirez par la bouche. 4. Appliquez du froid sur l'arête du nez. 5. Ne pas pencher la tête en arrière. 6. Si saignement persiste après 20 minutes : contactez la Clinique MM au 022 235 55. 7. Évitez de se moucher pendant 24h. 8. Si saignements fréquents : bilan médical.",
+      "category": "Emergency"
+    },
+    {
+      "id": 18,
+      "title": "RCR nourrisson",
+      "description": "1. Vérifiez la conscience en tapotant les pieds. 2. Appelez le 117 immédiatement ou contactez l'Espace médical Ambodivona au 032 02 088 16. 3. Basculez légèrement la tête en arrière. 4. Compressions : 2 doigts au centre de la poitrine, 1/3 de l'épaisseur. 5. 30 compressions rapides (100-120/min). 6. 2 insufflations bouche à bouche-nez. 7. Continuez 30:2. 8. Vérifiez le pouls brachial.",
+      "category": "Cardiac"
+    },
+    {
+      "id": 19,
+      "title": "Électrocution",
+      "description": "1. Coupez l'électricité au compteur si possible. 2. Ne touchez pas la victime si encore sous tension. 3. Écartez la source avec un objet isolant (bois sec). 4. Une fois sécurisé, vérifiez conscience et respiration. 5. Appelez le 117 ou contactez CHU HJRA au 033 11 890 58 même si la personne semble aller bien. 6. Surveillez brûlures d'entrée et sortie. 7. Position latérale si inconscient mais respire. 8. RCR si arrêt cardiaque.",
+      "category": "Emergency"
+    },
+    {
+      "id": 20,
+      "title": "Traumatisme crânien",
+      "description": "1. Gardez la tête et le cou immobiles. 2. Appelez le 117 immédiatement ou contactez CHU HJRA au 033 11 890 58. 3. Surveillez niveau de conscience. 4. Si conscient : position semi-assise. 5. Si inconscient : position latérale modifiée. 6. Contrôlez les hémorragies sans compression directe sur une fracture. 7. Surveillez vomissements. 8. Notez les changements comportementaux.",
+      "category": "Emergency"
+    },
+    {
+      "id": 21,
+      "title": "Corps étranger dans l'œil",
+      "description": "1. Ne frottez jamais l'œil. 2. Rincez abondamment avec de l'eau propre. 3. Tirez la paupière supérieure sur l'inférieure. 4. Si corps étranger visible sur paupière : retirez avec un linge propre. 5. Si corps étranger planté : ne retirez pas. 6. Couvrez les deux yeux avec un pansement. 7. Consultez rapidement la Clinique MM au 022 235 55. 8. Évitez les mouvements oculaires.",
+      "category": "Emergency"
+    },
+    {
+      "id": 22,
+      "title": "Crise d'épilepsie",
+      "description": "1. Restez calme et chronométrez la crise. 2. Éloignez les objets dangereux. 3. Placez un coussin sous la tête. 4. Ne maintenez pas la personne. 5. Ne mettez rien dans la bouche. 6. Après la crise : position latérale de sécurité. 7. Appelez le 117 ou contactez CHU HJRA au 033 11 890 58 si crise >5 minutes ou première crise. 8. Rassurez au réveil, la personne sera confuse.",
+      "category": "Emergency"
+    },
+    {
+      "id": 23,
+      "title": "Piqûre d'insecte allergique",
+      "description": "1. Retirez le dard en grattant (pas avec pince). 2. Nettoyez avec eau et savon. 3. Appliquez du froid. 4. Surveillez signes d'allergie : gonflement, difficultés respiratoires, urticaire généralisée. 5. Si allergie connue : aidez à utiliser auto-injecteur d'adrénaline. 6. Si réaction généralisée : appelez le 117 ou contactez l'Espace médical Ambodivona au 032 02 088 16. 7. Surélevez le membre piqué. 8. Antihistaminique si prescrit.",
+      "category": "Emergency"
+    },
+    {
+      "id": 24,
+      "title": "Plaie profonde",
+      "description": "1. Portez des gants de protection. 2. N'enlevez pas les objets plantés. 3. Contrôlez l'hémorragie par compression autour de l'objet. 4. Stabilisez l'objet avec pansements. 5. Allongez la victime. 6. Appelez le 117 ou contactez CHU HJRA au 033 11 890 58. 7. Surveillez les signes de choc. 8. Couvrez pour maintenir la température. 9. Ne donnez rien à boire.",
+      "category": "Emergency"
+    },
+    {
+      "id": 25,
+      "title": "Malaise diabétique",
+      "description": "1. Si conscient et hypoglycémie suspectée : donnez du sucre rapide (morceau de sucre, miel). 2. Si hyperglycémie : donnez de l'eau. 3. Aidez à prendre le traitement habituel si possible. 4. Surveillez l'évolution. 5. Si perte de conscience : position latérale, appelez le 117 ou contactez l'Espace médical Ambodivona au 032 02 088 16. 6. Ne forcez jamais à avaler si inconscient. 7. Recherchez bracelet/carte diabétique. 8. Notez l'heure des symptômes.",
+      "category": "Emergency"
+    },
+    {
+      "id": 26,
+      "title": "Infarctus du myocarde",
+      "description": "1. Appelez le 117 immédiatement ou contactez CHU HJRA au 033 11 890 58 (urgence vitale). 2. Installez en position demi-assise. 3. Desserrez vêtements serrés. 4. Si aspirine disponible et pas d'allergie : faire croquer 1 comprimé. 5. Aidez à prendre la trinitrine si prescrite. 6. Surveillez conscience et respiration. 7. Préparez la RCR si arrêt cardiaque. 8. Rassurez, évitez efforts.",
+      "category": "Cardiac"
+    },
+    {
+      "id": 27,
+      "title": "Overdose/intoxication",
+      "description": "1. Appelez le 117 immédiatement ou contactez l'Espace médical Ambodivona au 032 02 088 16. 2. Vérifiez conscience et respiration. 3. Position latérale de sécurité si inconscient. 4. Si arrêt respiratoire : ventilation assistée. 5. Gardez échantillon de la substance. 6. Surveillez température corporelle. 7. Ne faites pas vomir. 8. Préparez informations sur produits consommés et quantités.",
+      "category": "Emergency"
+    },
+    {
+      "id": 28,
+      "title": "Coup de chaleur",
+      "description": "1. Mettez à l'ombre, dans endroit frais. 2. Allongez, jambes légèrement surélevées. 3. Retirez vêtements excessifs. 4. Refroidissez : linge humide sur front, nuque, poignets. 5. Donnez de l'eau fraîche par petites gorgées si conscient. 6. Ventiler. 7. Appelez le 117 ou contactez l'Espace médical Ambodivona au 032 02 088 16 si température >40°C. 8. Surveillez état de conscience.",
+      "category": "Emergency"
+    },
+    {
+      "id": 29,
+      "title": "Obstruction partielle voies respiratoires",
+      "description": "1. Encouragez à tousser vigoureusement. 2. Penchez vers l'avant. 3. Ne donnez pas de claques dans le dos si la personne peut encore parler/tousser. 4. Surveillez l'évolution. 5. Si obstruction devient complète : manœuvre de Heimlich. 6. Appelez le 117 ou contactez l'Espace médical Ambodivona au 032 02 088 16 si détresse respiratoire. 7. Rassurez la personne. 8. Évitez les tentatives d'extraction à l'aveugle.",
+      "category": "Respiratory"
+    },
+    {
+      "id": 30,
+      "title": "Défaillance cardiaque aiguë",
+      "description": "1. Position assise, jambes pendantes. 2. Appelez le 117 immédiatement ou contactez CHU HJRA au 033 11 890 58. 3. Desserrez vêtements serrés. 4. Évitez la position allongée. 5. Aidez à prendre médicaments habituels si conscient. 6. Surveillez coloration des lèvres (cyanose). 7. Oxygène si disponible et formé. 8. Préparez informations sur traitements en cours.",
+      "category": "Cardiac"
+    }
+  ],
+  "emergencyNumbers": {
+    "police": "117",
+    "fire": "118",
+    "gendarmerie": "119",
+    "medicalEmergency": "032 02 088 16",
+    "hospitalCHU": "033 11 890 58",
+    "cliniqueMM": "022 235 55"
+  },
+  "categories": [
+    {
+      "id": "Respiratory",
+      "name": "Troubles respiratoires",
+      "description": "Procédures d'urgence pour les problèmes respiratoires et d'obstruction des voies aériennes",
+      "color": "#3498db"
+    },
+    {
+      "id": "Cardiac",
+      "name": "Urgences cardiaques",
+      "description": "Interventions d'urgence pour les problèmes cardiaques et circulatoires",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "Emergency",
+      "name": "Urgences générales",
+      "description": "Procédures pour diverses situations d'urgence et traumatismes",
+      "color": "#f39c12"
+    }
+  ]
+}
