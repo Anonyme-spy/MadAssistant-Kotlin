@@ -15,9 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MadAssistantTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                   //ContactsScreen()
-                }
+               App()
             }
         }
     }
