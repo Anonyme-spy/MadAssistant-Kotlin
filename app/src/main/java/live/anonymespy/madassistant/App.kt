@@ -11,6 +11,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import live.anonymespy.madassistant.navigation.BottomNav
 import live.anonymespy.madassistant.navigation.TopNav
+import live.anonymespy.madassistant.screens.SettingsScreen
 
 @Composable
 fun App(modifier: Modifier = Modifier) {
@@ -31,7 +32,7 @@ fun App(modifier: Modifier = Modifier) {
                 composable(Routes.HOME) { /* HomeScreen() */ }
                 composable(Routes.CONTACTS) { /* ContactsScreen() */ }
                 composable(Routes.FIRST_AID) { /* FirstAidScreen() */ }
-                composable(Routes.SETTINGS) { /* SettingsScreen() */ }
+                composable(Routes.SETTINGS) {  SettingsScreen()  }
             }
         }
         ,

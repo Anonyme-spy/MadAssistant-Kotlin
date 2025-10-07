@@ -9,31 +9,33 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
     primary = DarkTint,
     secondary = DarkTextSecondary,
-    tertiary = ServicePurple1,
+    tertiary = ServiceBlue1,
     background = DarkBackground,
     surface = DarkCardBackground,
     onPrimary = DarkTextPrimary,
     onSecondary = DarkTextSecondary,
-    onTertiary = DarkTextPrimary,
+    onTertiary = DarkTabIconDefault,
     onBackground = DarkTextPrimary,
     onSurface = DarkTextPrimary,
-    outline = DarkDivider
+    outline = DarkDivider,
+
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = LightTint,
     secondary = LightTextSecondary,
-    tertiary = ServicePurple1,
+    tertiary = ServiceBlue2,
     background = LightBackground,
     surface = LightCardBackground,
     onPrimary = LightTextPrimary,
     onSecondary = LightTextSecondary,
-    onTertiary = LightTextPrimary,
+    onTertiary = LightTabIconDefault,
     onBackground = LightTextPrimary,
     onSurface = LightTextPrimary,
     outline = LightDivider
@@ -54,9 +56,18 @@ fun MadAssistantTheme(
         else -> LightColorScheme
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
-    )
+    val customColors = if (darkTheme) {
+        CustomColors(bgIcons = ServiceBlue3)
+    } else {
+        CustomColors(bgIcons = ServiceBlue4)
+    }
+
+    CompositionLocalProvider(LocalCustomColors provides customColors) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = Typography,
+            content = content
+        )
+    }
+
 }
