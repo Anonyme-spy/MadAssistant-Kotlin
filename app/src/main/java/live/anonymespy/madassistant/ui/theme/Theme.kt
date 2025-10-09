@@ -11,6 +11,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.LocalContext
+import kotlin.text.compareTo
 
 private val DarkColorScheme = darkColorScheme(
     primary = DarkTint,
@@ -43,10 +44,16 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun MadAssistantTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    themeMode: ThemeMode = ThemeMode.SYSTEM,
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
+    val darkTheme = when (themeMode) {
+        ThemeMode.LIGHT -> false
+        ThemeMode.DARK -> true
+        ThemeMode.SYSTEM -> isSystemInDarkTheme()
+    }
+
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
@@ -57,9 +64,9 @@ fun MadAssistantTheme(
     }
 
     val customColors = if (darkTheme) {
-        CustomColors(bgIcons = ServiceBlue3)
+        CustomColors(bgIcons = ServiceBlue3, bgButton = ServiceBlue4, lgBg = ServiceOrange1)
     } else {
-        CustomColors(bgIcons = ServiceBlue4)
+        CustomColors(bgIcons = ServiceBlue4, bgButton = ServiceBlue3, lgBg = ServiceOrange2)
     }
 
     CompositionLocalProvider(LocalCustomColors provides customColors) {
@@ -69,5 +76,9 @@ fun MadAssistantTheme(
             content = content
         )
     }
-
 }
+
+enum class ThemeMode {
+    LIGHT, DARK, SYSTEM
+}
+

@@ -6,4 +6,6 @@ object Routes {
     const val FIRST_AID = "first_aid"
     const val SETTINGS = "settings"
 
+    const val TERMS = "terms"
+
 }

@@ -7,7 +7,9 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 data class CustomColors(
-    val bgIcons: Color = Color.Unspecified
+    val bgIcons: Color = Color.Unspecified,
+    val bgButton: Color = Color.Unspecified,
+    val lgBg: Color = Color.Unspecified
 )
 
 val LocalCustomColors = staticCompositionLocalOf { CustomColors() }
@@ -16,3 +18,14 @@ val ColorScheme.bgIcons: Color
     @Composable
     @ReadOnlyComposable
     get() = LocalCustomColors.current.bgIcons
+val ColorScheme.bgButton: Color
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalCustomColors.current.bgButton
+
+val ColorScheme.LgBg: Color
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalCustomColors.current.bgButton
+
+

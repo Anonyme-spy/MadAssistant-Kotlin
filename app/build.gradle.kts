@@ -38,10 +38,9 @@ android {
         compose = true
     }
 }
-
 dependencies {
+    implementation(libs.androidx.compose.foundation)
     val nav_version = "2.9.5"
-
     implementation("com.google.code.gson:gson:2.13.2")
     implementation("androidx.datastore:datastore-preferences:1.1.7")
     implementation("com.github.YarikSOffice:lingver:1.3.0")
@@ -62,3 +61,4 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
+
