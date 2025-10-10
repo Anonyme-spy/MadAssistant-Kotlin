@@ -93,4 +93,19 @@
     <string name="firstAid_categories_emergency">Urgences</string>
     <string name="firstAid_callEmergency">Appeler les secours</string>
     <string name="firstAid_noResults">Aucune procédure trouvée</string>
+
+    <!-- Stats Section -->
+    <string name="home_stats_responders">Active Responders</string>
+    <string name="home_stats_responders_count">150+</string>
+    <string name="home_stats_response">Avg Response Time</string>
+    <string name="home_stats_response_time">&lt; 10 min</string>
+    <string name="home_stats_coverage">Coverage</string>
+    <string name="home_stats_coverage_percent">24/7</string>
+
+    <!-- SOS Section -->
+    <string name="home_sos_label">Urgence absolue ?</string>
+    <string name="home_sos_button">SOS</string>
+    <string name="home_sos_button_subtitle">Appel d\'urgence</string>
+    <string name="home_sos_description">Appuyez pour contacter les services d\'urgence</string>
+
 </resources>

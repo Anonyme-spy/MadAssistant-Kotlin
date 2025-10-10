@@ -36,3 +36,20 @@ val ServicePurple2 = Color(0xFF9C27B0)
 val SOSRed1 = Color(0xFFFF6B6B)
 val SOSRed2 = Color(0xFFFF5252)
 val SOSRed3 = Color(0xFFD32F2F)
+
+// Hero Gradient Colors - Light Theme
+val LightHeroGradient1 = Color(0xFF667EEA)
+val LightHeroGradient2 = Color(0xFF764BA2)
+val LightHeroGradient3 = Color(0xFFF093FB)
+
+// Hero Gradient Colors - Dark Theme
+val DarkHeroGradient1 = Color(0xFF1A237E)
+val DarkHeroGradient2 = Color(0xFF3949AB)
+val DarkHeroGradient3 = Color(0xFF5C6BC0)
+
+// Add Stats Card Colors
+val StatsCardLight = Color(0xFFF0F4FF)
+val StatsCardDark = Color(0xFF252525)
+val StatsIconBgLight = Color(0xFFE3EEFF)
+val StatsIconBgDark = Color(0xFF2A2A2A)
+

@@ -64,10 +64,26 @@ fun MadAssistantTheme(
     }
 
     val customColors = if (darkTheme) {
-        CustomColors(bgIcons = ServiceBlue3, bgButton = ServiceBlue4, lgBg = ServiceOrange1)
+        CustomColors(
+            bgIcons = ServiceBlue3,
+            bgButton = ServiceBlue4,
+            lgBg = ServiceOrange1,
+            heroGradient = listOf(DarkHeroGradient1, DarkHeroGradient2, DarkHeroGradient3),
+            statsCardBg = StatsCardDark,
+            statsIconBg = StatsIconBgDark
+        )
     } else {
-        CustomColors(bgIcons = ServiceBlue4, bgButton = ServiceBlue3, lgBg = ServiceOrange2)
+        CustomColors(
+            bgIcons = ServiceBlue4,
+            bgButton = ServiceBlue3,
+            lgBg = ServiceOrange2,
+            heroGradient = listOf(LightHeroGradient1, LightHeroGradient2, LightHeroGradient3),
+            statsCardBg = StatsCardLight,
+            statsIconBg = StatsIconBgLight
+        )
     }
+
+
 
     CompositionLocalProvider(LocalCustomColors provides customColors) {
         MaterialTheme(

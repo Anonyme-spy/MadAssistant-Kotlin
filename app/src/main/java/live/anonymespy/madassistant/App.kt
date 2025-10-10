@@ -13,6 +13,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import live.anonymespy.madassistant.navigation.BottomNav
 import live.anonymespy.madassistant.navigation.TopNav
+import live.anonymespy.madassistant.screens.HomeScreen
 import live.anonymespy.madassistant.screens.SettingsScreen
 import live.anonymespy.madassistant.screens.stack.TermsScreen
 import live.anonymespy.madassistant.ui.theme.ThemeMode
@@ -37,7 +38,7 @@ fun App(modifier: Modifier = Modifier, selectededTheme: ThemeMode, onThemeChange
                 startDestination = Routes.HOME,
                 modifier = modifier.padding(if (currentRoute == Routes.TERMS) PaddingValues(0.dp) else innerPadding)
             ) {
-                composable(Routes.HOME) { /* HomeScreen() */ }
+                composable(Routes.HOME) { HomeScreen() }
                 composable(Routes.CONTACTS) { /* ContactsScreen() */ }
                 composable(Routes.FIRST_AID) { /* FirstAidScreen() */ }
                 composable(Routes.SETTINGS) {
