@@ -53,3 +53,12 @@ val StatsCardDark = Color(0xFF252525)
 val StatsIconBgLight = Color(0xFFE3EEFF)
 val StatsIconBgDark = Color(0xFF2A2A2A)
 
+// Add these to Color.kt
+val GlassBorderLight = Color(0xFFE8F0FE)
+val GlassBorderDark = Color(0xFF2A2A2A)
+val GlassBackgroundLight = Color(0xFFFAFBFF)
+val GlassBackgroundDark = Color(0xFF1A1A1A)
+val CardOverlayLight = Color(0xFFF5F7FF)
+val CardOverlayDark = Color(0xFF252525)
+
+

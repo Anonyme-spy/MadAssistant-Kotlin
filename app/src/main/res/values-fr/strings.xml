@@ -108,4 +108,19 @@
     <string name="home_sos_button_subtitle">Appel d\'urgence</string>
     <string name="home_sos_description">Appuyez pour contacter les services d\'urgence</string>
 
+
+    <string name="home_stats_title">Statistiques</string>
+    <string name="home_sos_title">Urgence SOS</string>
+
+    <!-- Hero Section -->
+    <string name="home_hero_availability_247">24/7</string>
+    <string name="home_hero_availability_text">Assistance</string>
+
+    <!-- Section Headers -->
+    <string name="home_section_stats">Statistiques</string>
+    <string name="home_section_sos">Urgence SOS</string>
+
+
+
+
 </resources>

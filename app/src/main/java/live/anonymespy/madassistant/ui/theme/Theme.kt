@@ -70,7 +70,10 @@ fun MadAssistantTheme(
             lgBg = ServiceOrange1,
             heroGradient = listOf(DarkHeroGradient1, DarkHeroGradient2, DarkHeroGradient3),
             statsCardBg = StatsCardDark,
-            statsIconBg = StatsIconBgDark
+            statsIconBg = StatsIconBgDark,
+            glassBorder = GlassBorderDark,
+            glassBackground = GlassBackgroundDark,
+            cardOverlay = CardOverlayDark
         )
     } else {
         CustomColors(
@@ -79,7 +82,10 @@ fun MadAssistantTheme(
             lgBg = ServiceOrange2,
             heroGradient = listOf(LightHeroGradient1, LightHeroGradient2, LightHeroGradient3),
             statsCardBg = StatsCardLight,
-            statsIconBg = StatsIconBgLight
+            statsIconBg = StatsIconBgLight,
+            glassBorder = GlassBorderLight,
+            glassBackground = GlassBackgroundLight,
+            cardOverlay = CardOverlayLight
         )
     }
 

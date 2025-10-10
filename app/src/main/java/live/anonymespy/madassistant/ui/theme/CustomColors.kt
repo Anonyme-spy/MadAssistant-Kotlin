@@ -12,7 +12,10 @@ data class CustomColors(
     val lgBg: Color = Color.Unspecified,
     val heroGradient: List<Color> = listOf(Color.Unspecified, Color.Unspecified, Color.Unspecified),
     val statsCardBg: Color = Color.Unspecified,
-    val statsIconBg: Color = Color.Unspecified
+    val statsIconBg: Color = Color.Unspecified,
+    val glassBorder: Color = Color.Unspecified,
+    val glassBackground: Color = Color.Unspecified,
+    val cardOverlay: Color = Color.Unspecified
 )
 
 val ColorScheme.statsCardBg: Color
@@ -47,3 +50,19 @@ val ColorScheme.heroGradient: List<Color>
     @Composable
     @ReadOnlyComposable
     get() = LocalCustomColors.current.heroGradient
+
+
+val ColorScheme.glassBorder: Color
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalCustomColors.current.glassBorder
+
+val ColorScheme.glassBackground: Color
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalCustomColors.current.glassBackground
+
+val ColorScheme.cardOverlay: Color
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalCustomColors.current.cardOverlay
