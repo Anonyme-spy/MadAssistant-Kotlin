@@ -121,6 +121,28 @@
     <string name="home_section_stats">Statistics</string>
     <string name="home_section_sos">SOS Emergency</string>
 
+    <string name="firstaid_title">First Aid</string>
+    <string name="firstaid_subtitle">Emergency procedures guide</string>
+    <string name="firstaid_search_placeholder">Search procedures...</string>
+    <string name="firstaid_category_all">All</string>
+    <string name="firstaid_category_respiratory">Respiratory</string>
+    <string name="firstaid_category_cardiac">Cardiac</string>
+    <string name="firstaid_category_emergency">Emergency</string>
+    <string name="firstaid_no_results">No results found</string>
+    <string name="firstaid_call_emergency">Call Emergency</string>
+
+    <!-- Contacts Screen -->
+    <string name="contacts_search_placeholder">Search contacts...</string>
+    <string name="contacts_category_all">All</string>
+    <string name="contacts_category_health">Health</string>
+    <string name="contacts_category_security">Security</string>
+    <string name="contacts_category_fire">Fire</string>
+    <string name="contacts_category_insurance">Insurance</string>
+    <string name="contacts_no_results">No contacts found</string>
+    <string name="contacts_phone_numbers">Phone Numbers</string>
+
+
+
 
 
 </resources>

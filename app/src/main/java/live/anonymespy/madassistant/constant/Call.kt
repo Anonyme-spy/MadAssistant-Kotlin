@@ -46,4 +46,5 @@ object EmergencyCall {
             vibrator.vibrate(200)
         }
     }
+
 }

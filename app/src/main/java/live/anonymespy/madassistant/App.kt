@@ -6,6 +6,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -13,10 +14,13 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import live.anonymespy.madassistant.navigation.BottomNav
 import live.anonymespy.madassistant.navigation.TopNav
+import live.anonymespy.madassistant.screens.ContactsScreen
+import live.anonymespy.madassistant.screens.FirstAidScreen
 import live.anonymespy.madassistant.screens.HomeScreen
 import live.anonymespy.madassistant.screens.SettingsScreen
 import live.anonymespy.madassistant.screens.stack.TermsScreen
 import live.anonymespy.madassistant.ui.theme.ThemeMode
+import java.util.Locale
 
 @Composable
 fun App(modifier: Modifier = Modifier, selectededTheme: ThemeMode, onThemeChange: (ThemeMode) -> Unit) {
@@ -39,15 +43,21 @@ fun App(modifier: Modifier = Modifier, selectededTheme: ThemeMode, onThemeChange
                 modifier = modifier.padding(if (currentRoute == Routes.TERMS) PaddingValues(0.dp) else innerPadding)
             ) {
                 composable(Routes.HOME) { HomeScreen() }
-                composable(Routes.CONTACTS) { /* ContactsScreen() */ }
-                composable(Routes.FIRST_AID) { /* FirstAidScreen() */ }
+                composable(Routes.CONTACTS) { ContactsScreen() }
+                composable(Routes.FIRST_AID) { FirstAidScreen() }
                 composable(Routes.SETTINGS) {
+                    val context = LocalContext.current
                     SettingsScreen(
                         selectedTheme = selectededTheme,
                         onThemeChange = onThemeChange,
-                        onNavigateToTerms = { navController.navigate(Routes.TERMS) }
+                        onNavigateToTerms = { navController.navigate(Routes.TERMS) },
+                        onLanguageChange = { _ ->
+                            (context as? android.app.Activity)?.recreate()
+                        }
                     )
                 }
+
+
                 composable(Routes.TERMS) {
                     TermsScreen(onNavigateBack = { navController.popBackStack() })
                 }

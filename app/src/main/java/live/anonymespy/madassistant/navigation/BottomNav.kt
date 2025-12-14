@@ -12,6 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarDefaults
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -34,8 +35,6 @@ fun BottomNav(
 
     NavigationBar(modifier = modifier
         .drawBehind {
-
-
             drawLine(
                 color = borderColour,
                 start = Offset(0f, 0f),
@@ -49,25 +48,47 @@ fun BottomNav(
             selected = currentRoute == Routes.HOME,
             onClick = { navController.navigate(Routes.HOME) },
             icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
-            label = { Text(stringResource(R.string.tabs_home)) }
+            label = { Text(stringResource(R.string.tabs_home)) },
+            colors = NavigationBarItemDefaults.colors(
+                indicatorColor = MaterialTheme.colorScheme.background,
+                selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                unselectedIconColor = MaterialTheme.colorScheme.onTertiary
+            )
         )
         NavigationBarItem(
             selected = currentRoute == Routes.CONTACTS,
             onClick = { navController.navigate(Routes.CONTACTS) },
             icon = { Icon(painterResource(R.drawable.phone_outgoing), contentDescription = "phone outgoing") },
-            label = { Text(stringResource(R.string.tabs_contacts)) }
+            label = { Text(stringResource(R.string.tabs_contacts)) },
+            colors = NavigationBarItemDefaults.colors(
+
+                indicatorColor = MaterialTheme.colorScheme.background,
+                selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                unselectedIconColor = MaterialTheme.colorScheme.onTertiary
+            )
         )
         NavigationBarItem(
             selected = currentRoute == Routes.FIRST_AID,
             onClick = { navController.navigate(Routes.FIRST_AID) },
             icon = { Icon(painterResource(R.drawable.heart_pulse), contentDescription = "Heatbeat") },
-            label = { Text(stringResource(R.string.tabs_firstAid)) }
+            label = { Text(stringResource(R.string.tabs_firstAid)) },
+            colors = NavigationBarItemDefaults.colors(
+                indicatorColor = MaterialTheme.colorScheme.background,
+                selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                unselectedIconColor = MaterialTheme.colorScheme.onTertiary
+            )
         )
         NavigationBarItem(
             selected = currentRoute == Routes.SETTINGS,
             onClick = { navController.navigate(Routes.SETTINGS) },
             icon = { Icon(Icons.Default.Settings, contentDescription = "Settings") },
-            label = { Text(stringResource(R.string.tabs_settings)) }
+            label = { Text(stringResource(R.string.tabs_settings)) },
+            colors = NavigationBarItemDefaults.colors(
+
+                indicatorColor = MaterialTheme.colorScheme.background,
+                selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                unselectedIconColor = MaterialTheme.colorScheme.onTertiary
+            )
         )
     }
 }

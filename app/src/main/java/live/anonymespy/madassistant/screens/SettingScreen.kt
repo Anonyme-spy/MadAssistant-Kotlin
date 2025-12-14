@@ -1,459 +1,371 @@
 package live.anonymespy.madassistant.screens
 
-
-import android.R.attr.fontWeight
-import android.R.attr.onClick
-import android.R.id.text1
-import android.R.id.text2
-import androidx.activity.ComponentActivity
-import androidx.compose.foundation.Image
+import android.R.attr.text
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.yariksoffice.lingver.Lingver
-import kotlinx.coroutines.launch
 import live.anonymespy.madassistant.R
-import live.anonymespy.madassistant.ui.theme.DarkTint
-import live.anonymespy.madassistant.ui.theme.LocalCustomColors
-import live.anonymespy.madassistant.ui.theme.MadAssistantTheme
-import live.anonymespy.madassistant.ui.theme.ServiceBlue1
-import live.anonymespy.madassistant.ui.theme.ServiceBlue2
-import live.anonymespy.madassistant.ui.theme.ServiceOrange1
-import live.anonymespy.madassistant.ui.theme.ServiceOrange2
 import live.anonymespy.madassistant.ui.theme.ThemeMode
-import live.anonymespy.madassistant.ui.theme.bgButton
-import live.anonymespy.madassistant.ui.theme.bgIcons
-import org.intellij.lang.annotations.Language
 import java.util.Locale
-import kotlin.compareTo
+
+
+
+// Theme colors
+private val ThemeBlue = Color(0xFF3B82F6)
+private val ThemeOrange = Color(0xFFF59E0B)
+private val ThemePurple = Color(0xFF8B5CF6)
+private val ThemeGreen = Color(0xFF10B981)
 
 @Composable
 fun SettingsScreen(
+    modifier: Modifier = Modifier,
     selectedTheme: ThemeMode,
     onThemeChange: (ThemeMode) -> Unit,
     onNavigateToTerms: () -> Unit,
-    modifier: Modifier = Modifier
+    onLanguageChange: (String) -> Unit = {}
 ) {
     val context = LocalContext.current
-    val activity = context as? ComponentActivity
-    val currentLanguage = Lingver.getInstance().getLocale().language
-    val initialLocale = when (currentLanguage) {
-        "fr" -> Locale.FRENCH
-        else -> Locale.ENGLISH
-    }
-    var selectedLanguage by remember { mutableStateOf(initialLocale) }
-
     val scrollState = rememberScrollState()
 
-
-    // Restore scroll position smoothly after layout
-    LaunchedEffect(scrollState.maxValue) {
-        val savedPosition = ScrollStateManager.getSavedScrollPosition()
-        if (savedPosition > 0 && scrollState.maxValue > 0) {
-            scrollState.animateScrollTo(savedPosition)
-            ScrollStateManager.clearScrollPosition()
-        }
+    var currentLanguage by remember {
+        mutableStateOf(Lingver.getInstance().getLanguage())
     }
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
             .verticalScroll(scrollState)
+            .padding(bottom = 32.dp)
     ) {
-        Text(
-            stringResource(R.string.settings_title),
-            modifier = Modifier
-                .padding(top = 24.dp)
-                .fillMaxWidth(),
-            style = MaterialTheme.typography.headlineMedium,
-            textAlign = TextAlign.Center,
-        )
-        InfoCard()
-        Column {
-            Text(stringResource(R.string.settings_configuration).uppercase(),
-                style = MaterialTheme.typography.headlineMedium,
-                textAlign = TextAlign.Start,
-                fontStyle = FontStyle.Normal,
-                modifier = Modifier
-                    .padding(start = 24.dp, bottom = 8.dp)
-                    .fillMaxWidth(),
-                color = MaterialTheme.colorScheme.onSecondary
+        // Header Section
+        SettingsHeader()
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Appearance Section
+        SettingsSection(title = stringResource(R.string.settings_configuration)) {
+            // Theme Setting
+            ThemeSettingCard(
+                selectedTheme = selectedTheme,
+                onThemeChange = onThemeChange
             )
-            ThemeCardSwitch(selectedTheme, onThemeChange)
-            LanguageCardSwitch(
-                selectedLanguage = selectedLanguage,
-                onLanguageChange = { newLocale ->
-                    selectedLanguage = newLocale
-                    ScrollStateManager.saveScrollPosition(scrollState.value)
-                    Lingver.getInstance().setLocale(context, newLocale)
-                    activity?.recreate()
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // Language Setting
+            LanguageSettingCard(
+                currentLanguage = currentLanguage,
+                onLanguageChange = { newLanguage ->
+                    currentLanguage = newLanguage
+                    onLanguageChange(newLanguage)
                 }
             )
+
         }
-        Column(
-            modifier.padding(top = 12.dp)
-        ) {
-            Text(stringResource(R.string.settings_legal).uppercase(),
-                style = MaterialTheme.typography.headlineMedium,
-                textAlign = TextAlign.Start,
-                fontStyle = FontStyle.Normal,
-                modifier = Modifier
-                    .padding(start = 24.dp, bottom = 8.dp)
-                    .fillMaxWidth(),
-                color = MaterialTheme.colorScheme.onSecondary
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Legal Section
+        SettingsSection(title = stringResource(R.string.settings_legal)) {
+            SettingsNavigationCard(
+                icon = painterResource(R.drawable.file_document_multiple_outline),
+                iconColor = ThemePurple,
+                title = stringResource(R.string.settings_termsTitle),
+                description = stringResource(R.string.settings_termsDescription),
+                onClick = onNavigateToTerms
             )
-            LegalCard ( onClick = onNavigateToTerms )
+        }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // About Section
+        AboutCard()
+    }
+}
+
+@Composable
+private fun SettingsHeader() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp)
+            .padding(top = 16.dp)
+    ) {
+        Column {
+            Text(
+                text = stringResource(R.string.settings_title),
+                fontSize = 28.sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onBackground
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = stringResource(R.string.settings_configuration),
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Medium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 }
 
-
-
-
-
-
-//@Preview(showBackground = true)
-//@Composable
-//private fun Preview() {
-//    MadAssistantTheme {
-//        Column {
-//            Text(stringResource(R.string.settings_title),
-//                modifier = Modifier
-//                    .padding(top = 24.dp)
-//                    .fillMaxWidth(),
-//                style = MaterialTheme.typography.headlineMedium,
-//                fontWeight = FontWeight.Bold,
-//                textAlign = TextAlign.Center
-//            )
-//            InfoCard()
-//        }
-//    }
-//}
-
-
-
-
 @Composable
-private fun InfoCard(modifier: Modifier = Modifier) {
-    Card(
-        modifier
-            .padding(start = 24.dp, end = 24.dp, bottom = 24.dp)
-            .background(MaterialTheme.colorScheme.background)
-            .shadow(shape = RoundedCornerShape(24.dp), elevation = 20.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(24.dp),  // Increased corner radius
-        elevation = CardDefaults.cardElevation(8.dp),
+private fun SettingsSection(
+    title: String,
+    content: @Composable ColumnScope.() -> Unit
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp)
     ) {
-        Column (
-           horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .padding(24.dp)
-                .fillMaxWidth()
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(bottom = 12.dp)
         ) {
             Box(
-                contentAlignment = Alignment.Center,
                 modifier = Modifier
-                    .padding(bottom = 12.dp)
-                    .background(
-                        color = LocalCustomColors.current.bgIcons,
-                        shape = CircleShape
-                    )
-                    .border(
-                        shape = CircleShape,
-                        width = 2.dp,
-                        color = MaterialTheme.colorScheme.onSecondary
-                    )
-                    .padding(20.dp)
-
-
-            ) {
-                Image(
-                    painterResource(R.drawable.shield_check),
-                    contentDescription = "shield",
-                    modifier = Modifier
-                        .size(30.dp),
-                    colorFilter = ColorFilter.tint(DarkTint)
-                )
-            }
-
-
-            Text(text = stringResource(R.string.about_title),
-                modifier = Modifier
-                    .padding(top = 8.dp),
-                style = MaterialTheme.typography.titleLarge,
-                textAlign = TextAlign.Center,
-                fontWeight = FontWeight.Bold
+                    .size(6.dp)
+                    .clip(CircleShape)
+                    .background(MaterialTheme.colorScheme.primary)
             )
-
-            Text(text = stringResource(R.string.about_subtitle),
-                modifier
-                    .padding(top = 10.dp)
-                    .padding(bottom = 2.dp),
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.tertiary
-                )
-
-            Text(text = stringResource(R.string.about_description),
-                modifier
-                    .padding(18.dp),
-                textAlign = TextAlign.Center,
-                color = MaterialTheme.colorScheme.onSecondary
-
-                )
-
-            Column {
-                IconText(painterResource(R.drawable.phone), stringResource(R.string.about_features_quickCall))
-                IconText(painterResource(R.drawable.account_group))
-                IconText(painterResource(R.drawable.translate), stringResource(R.string.about_features_multilingual))
-
-            }
-
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(
+                text = title,
+                fontSize = 14.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                letterSpacing = 0.5.sp
+            )
         }
+        content()
     }
 }
 
-
 @Composable
-private fun IconText(
-    images: Painter = painterResource(R.drawable.heart_pulse),
-    text: String = stringResource(R.string.about_features_contacts)
-    ) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Image(images , contentDescription = null, modifier = Modifier.size(20.dp),
-            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onTertiary)
-            )
-        Text(text, modifier = Modifier
-            .padding(
-                top = 5.dp,
-                bottom = 3.dp,
-                start = 8.dp
-            ),
-            textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.onSecondary
-        )
-    }
-}
-
-
-
-@Composable
-private fun ThemeCardSwitch(
+private fun ThemeSettingCard(
     selectedTheme: ThemeMode,
     onThemeChange: (ThemeMode) -> Unit
 ) {
-    Card(
-        modifier = Modifier
-            .padding(start = 24.dp, end = 24.dp, bottom = 24.dp)
-            .fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(24.dp),
-        elevation = CardDefaults.cardElevation(8.dp)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            IconTextCard()
+    SettingsCard {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                SettingsIcon(
+                    painter = painterResource(R.drawable.brush),
+                    color = ThemeOrange
+                )
+                Spacer(modifier = Modifier.width(12.dp))
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = stringResource(R.string.settings_theme),
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Text(
+                        text = stringResource(R.string.settings_themeDescription),
+                        fontSize = 13.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
 
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                ThemeButton(
+                ThemeOption(
+                    title = stringResource(R.string.settings_light),
                     icon = painterResource(R.drawable.white_balance_sunny),
-                    label = stringResource(R.string.settings_light),
                     isSelected = selectedTheme == ThemeMode.LIGHT,
-                    onClick = { onThemeChange(ThemeMode.LIGHT) }
+                    onClick = { onThemeChange(ThemeMode.LIGHT) },
+                    modifier = Modifier.weight(1f)
                 )
-
-                ThemeButton(
+                ThemeOption(
+                    title = stringResource(R.string.settings_dark),
                     icon = painterResource(R.drawable.weather_night),
-                    label = stringResource(R.string.settings_dark),
                     isSelected = selectedTheme == ThemeMode.DARK,
-                    onClick = { onThemeChange(ThemeMode.DARK) }
+                    onClick = { onThemeChange(ThemeMode.DARK) },
+                    modifier = Modifier.weight(1f)
                 )
-
-                ThemeButton(
-                    icon = painterResource(R.drawable.auto_fix),
-                    label = stringResource(R.string.settings_auto),
+                ThemeOption(
+                    title = stringResource(R.string.settings_auto),
+                    icon = painterResource(R.drawable.smartphone_2_svgrepo_com),
                     isSelected = selectedTheme == ThemeMode.SYSTEM,
-                    onClick = { onThemeChange(ThemeMode.SYSTEM) }
+                    onClick = { onThemeChange(ThemeMode.SYSTEM) },
+                    modifier = Modifier.weight(1f)
                 )
             }
         }
     }
 }
 
-
-
 @Composable
-fun IconTextCard(
-    image: Painter = painterResource(R.drawable.brush),
-    text1: String = stringResource(R.string.settings_theme),
-    text2: String = stringResource(R.string.settings_themeDescription),
-    colours: Color = MaterialTheme.colorScheme.tertiary
-    ) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-
-    ) {
-        Image(image, contentDescription = null, modifier = Modifier
-            .size(44.dp)
-            .padding(start = 12.dp),
-            colorFilter = ColorFilter.tint(colours)
-        )
-        Column(
-            modifier = Modifier.padding(start = 8.dp)
-        ) {
-            Text(text = text1, modifier = Modifier.padding(2.dp),
-                style = MaterialTheme.typography.headlineMedium,
-                color = MaterialTheme.colorScheme.onPrimary,
-                fontWeight = FontWeight.Bold)
-            Text(text = text2, modifier = Modifier.padding(2.dp),
-                color = MaterialTheme.colorScheme.onSecondary,
-                fontWeight = FontWeight.W300,
-                style = MaterialTheme.typography.bodySmall
-                )
-        }
-
-    }
-
-}
-
-@Composable
-private fun ThemeButton(
+private fun ThemeOption(
+    title: String,
     icon: Painter,
-    label: String,
     isSelected: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .clickable(onClick = onClick)
-            .padding(8.dp)
+    val scale by animateFloatAsState(
+        targetValue = if (isSelected) 1f else 0.95f,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessMedium
+        ),
+        label = "themeScale"
+    )
+
+    val backgroundColor by animateColorAsState(
+        targetValue = if (isSelected)
+            MaterialTheme.colorScheme.tertiary
+        else
+            MaterialTheme.colorScheme.surfaceVariant,
+        label = "themeBg"
+    )
+
+    val contentColor by animateColorAsState(
+        targetValue = if (isSelected)
+            Color.White
+        else
+            MaterialTheme.colorScheme.onSurfaceVariant,
+        label = "themeContent"
+    )
+
+    Box(
+        modifier = modifier
+            .scale(scale)
+            .clip(RoundedCornerShape(12.dp))
+            .background(backgroundColor)
+            .clickable(
+                interactionSource = remember { MutableInteractionSource() },
+                indication = null,
+                onClick = onClick
+            )
+            .padding(vertical = 12.dp),
+        contentAlignment = Alignment.Center
     ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .size(56.dp)
-                .background(
-                    color = if (isSelected) MaterialTheme.colorScheme.bgButton
-                    else MaterialTheme.colorScheme.surface,
-                    shape = CircleShape
-                ).border(
-                    shape = CircleShape,
-                    width = 1.dp,
-                    color = if (isSelected) MaterialTheme.colorScheme.bgButton
-                    else MaterialTheme.colorScheme.onSurface
-                )
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
+            Icon(
                 painter = icon,
-                contentDescription = label,
-                modifier = Modifier.size(28.dp),
-                colorFilter = ColorFilter.tint(
-                    if (isSelected) MaterialTheme.colorScheme.onPrimary
-                    else MaterialTheme.colorScheme.onSurface
-                )
+                contentDescription = null,
+                tint = contentColor,
+                modifier = Modifier.size(20.dp)
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            Text(
+                text = title,
+                fontSize = 12.sp,
+                fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Medium,
+                color = contentColor
             )
         }
-
-        Text(
-            text = label,
-            modifier = Modifier.padding(top = 8.dp),
-            style = MaterialTheme.typography.labelSmall,
-            color = if (isSelected) MaterialTheme.colorScheme.primary
-            else MaterialTheme.colorScheme.onSurface
-        )
     }
 }
 
 @Composable
-private fun LanguageCardSwitch(
-    selectedLanguage: Locale,
-    onLanguageChange: (Locale) -> Unit
+private fun LanguageSettingCard(
+    currentLanguage: String,
+    onLanguageChange: (String) -> Unit
 ) {
-    Card(
-        modifier = Modifier
-            .padding(start = 24.dp, end = 24.dp, bottom = 24.dp)
-            .fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(24.dp),
-        elevation = CardDefaults.cardElevation(8.dp)
-    ) {
-        Column(modifier = Modifier.padding(20.dp)) {
-            IconTextCard(
-                text1 = stringResource(R.string.settings_language),
-                text2 = stringResource(R.string.settings_languageDescription),
-                image = painterResource(R.drawable.translate_variant),
-                colours = MaterialTheme.colorScheme.onTertiary
-            )
 
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 20.dp)
-                    .background(
-                        color = MaterialTheme.colorScheme.background.copy(alpha = 0.5f),
-                        shape = RoundedCornerShape(16.dp)
+    val context = LocalContext.current
+    SettingsCard {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                SettingsIcon(
+                    painter = painterResource(R.drawable.translate),
+                    color = ThemeBlue
+                )
+                Spacer(modifier = Modifier.width(12.dp))
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = stringResource(R.string.settings_language),
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
-                    .padding(8.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
+                    Text(
+                        text = stringResource(R.string.settings_languageDescription),
+                        fontSize = 13.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 LanguageOption(
-                    label = "English",
-                    flag = painterResource(R.drawable.flag_of_united_kingdom),
-                    isSelected = selectedLanguage == Locale.ENGLISH,
-                    onClick = { onLanguageChange(Locale.ENGLISH) }
+                    title = stringResource(R.string.settings_french),
+                    flag = "🇫🇷",
+                    isSelected = currentLanguage == "fr",
+                    onClick = {
+                        Lingver.getInstance().setLocale(context, Locale.FRENCH)
+                        onLanguageChange("fr")
+                    },
+                    modifier = Modifier.weight(1f)
                 )
-
                 LanguageOption(
-                    label = "Français",
-                    flag = painterResource(R.drawable.flag_of_france),
-                    isSelected = selectedLanguage == Locale.FRENCH,
-                    onClick = { onLanguageChange(Locale.FRENCH) }
+                    title = stringResource(R.string.settings_english),
+                    flag = "🇬🇧",
+                    isSelected = currentLanguage == "en",
+                    onClick = {
+                        Lingver.getInstance().setLocale(context, Locale.ENGLISH)
+                        onLanguageChange("en")
+                    },
+                    modifier = Modifier.weight(1f)
                 )
             }
         }
@@ -462,117 +374,323 @@ private fun LanguageCardSwitch(
 
 @Composable
 private fun LanguageOption(
-    label: String,
-    flag: Painter,
+    title: String,
+    flag: String,
     isSelected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val borderColor by animateColorAsState(
+        targetValue = if (isSelected)
+            MaterialTheme.colorScheme.tertiary
+        else
+            MaterialTheme.colorScheme.outline.copy(alpha = 0.3f),
+        label = "langBorder"
+    )
+
+    val backgroundColor by animateColorAsState(
+        targetValue = if (isSelected)
+            MaterialTheme.colorScheme.tertiary.copy(alpha = 0.1f)
+        else
+            Color.Transparent,
+        label = "langBg"
+    )
+
+    Box(
+        modifier = modifier
+            .clip(RoundedCornerShape(12.dp))
+            .background(backgroundColor)
+            .border(
+                width = 1.5.dp,
+                color = borderColor,
+                shape = RoundedCornerShape(12.dp)
+            )
+            .clickable(
+                interactionSource = remember { MutableInteractionSource() },
+                indication = null,
+                onClick = onClick
+            )
+            .padding(vertical = 14.dp, horizontal = 12.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    text = flag,
+                    fontSize = 20.sp
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                Text(
+                    text = title,
+                    fontSize = 14.sp,
+                    fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Medium,
+                    color = if (isSelected)
+                        MaterialTheme.colorScheme.primary
+                    else
+                        MaterialTheme.colorScheme.onSurface
+                )
+            }
+
+            if (isSelected) {
+                Box(
+                    modifier = Modifier
+                        .size(20.dp)
+                        .clip(CircleShape)
+                        .background(MaterialTheme.colorScheme.tertiary),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = null,
+                        tint = Color.White,
+                        modifier = Modifier.size(14.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun SettingsNavigationCard(
+    icon: Painter,
+    iconColor: Color,
+    title: String,
+    description: String,
     onClick: () -> Unit
 ) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
+    SettingsCard(
+        onClick = onClick
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            SettingsIcon(
+                painter = icon,
+                color = iconColor
+            )
+            Spacer(modifier = Modifier.width(12.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = title,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                Text(
+                    text = description,
+                    fontSize = 13.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            Icon(
+                imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.size(24.dp)
+            )
+        }
+    }
+}
+
+@Composable
+private fun SettingsCard(
+    onClick: (() -> Unit)? = null,
+    content: @Composable BoxScope.() -> Unit
+) {
+    Box(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable(onClick = onClick)
+            .clip(RoundedCornerShape(16.dp))
+            .background(MaterialTheme.colorScheme.surface)
+            .border(
+                width = 1.dp,
+                color = MaterialTheme.colorScheme.outline.copy(alpha = 0.1f),
+                shape = RoundedCornerShape(16.dp)
+            )
+            .then(
+                if (onClick != null) {
+                    Modifier.clickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = null,
+                        onClick = onClick
+                    )
+                } else Modifier
+            ),
+        content = content
+    )
+}
+
+@Composable
+private fun SettingsIcon(
+    painter: Painter,
+    color: Color
+) {
+    Box(
+        modifier = Modifier
+            .size(44.dp)
+            .clip(RoundedCornerShape(12.dp))
+            .background(color.copy(alpha = 0.12f)),
+        contentAlignment = Alignment.Center
+    ) {
+        Icon(
+            painter = painter,
+            contentDescription = null,
+            tint = color,
+            modifier = Modifier.size(22.dp)
+        )
+    }
+}
+
+@Composable
+private fun AboutCard() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp)
+            .clip(RoundedCornerShape(20.dp))
             .background(
-                color = if (isSelected) MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
-                else Color.Transparent,
-                shape = RoundedCornerShape(12.dp)
+                brush = Brush.linearGradient(
+                    colors = listOf(
+                        MaterialTheme.colorScheme.tertiary.copy(alpha = 0.08f),
+                        MaterialTheme.colorScheme.secondary.copy(alpha = 0.05f)
+                    )
+                )
             )
             .border(
-                width = if (isSelected) 2.dp else 0.dp,
-                color = if (isSelected) MaterialTheme.colorScheme.primary
-                else Color.Transparent,
-                shape = RoundedCornerShape(12.dp)
+                width = 1.dp,
+                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f),
+                shape = RoundedCornerShape(20.dp)
             )
-            .padding(horizontal = 16.dp, vertical = 12.dp)
+            .padding(24.dp)
     ) {
-        Image(
-            painter = flag,
-            contentDescription = label,
-            modifier = Modifier
-                .size(28.dp)
-                .background(
-                    color = Color.White,
-                    shape = CircleShape
-                )
-                .padding(2.dp)
-        )
-
-        Text(
-            text = label,
-            modifier = Modifier
-                .padding(start = 12.dp)
-                .weight(1f),
-            style = MaterialTheme.typography.titleMedium,
-            color = if (isSelected) MaterialTheme.colorScheme.primary
-            else MaterialTheme.colorScheme.onSurface
-        )
-
-        if (isSelected) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            // App Icon
             Box(
                 modifier = Modifier
-                    .size(20.dp)
-                    .background(
-                        color = MaterialTheme.colorScheme.primary,
-                        shape = CircleShape
-                    ),
+                    .size(72.dp)
+                    .clip(RoundedCornerShape(18.dp))
+                    .background(MaterialTheme.colorScheme.tertiary),
                 contentAlignment = Alignment.Center
             ) {
+                Icon(
+                    painter = painterResource(R.drawable.shield_half_full),
+                    contentDescription = null,
+                    tint = Color.White,
+                    modifier = Modifier.size(36.dp)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = stringResource(R.string.about_title),
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            Text(
+                text = stringResource(R.string.about_subtitle),
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Medium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = stringResource(R.string.about_description),
+                fontSize = 13.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center,
+                lineHeight = 20.sp
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Features row
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                FeatureBadge(
+                    icon = painterResource(R.drawable.phone),
+                    label = stringResource(R.string.about_features_quickCall)
+                )
+                FeatureBadge(
+                    icon = painterResource(R.drawable.account_group),
+                    label = stringResource(R.string.about_features_contacts)
+                )
+                FeatureBadge(
+                    icon = painterResource(R.drawable.translate),
+                    label = stringResource(R.string.about_features_multilingual)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Version badge
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(20.dp))
+                    .background(MaterialTheme.colorScheme.surfaceVariant)
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
                 Text(
-                    text = "✓",
-                    color = Color.White,
-                    style = MaterialTheme.typography.labelSmall
+                    text = "${stringResource(R.string.about_version)} 1.0.0",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
         }
     }
 }
-//@Preview(showBackground = true)
-//@Composable
-//private fun LegalCardPreview(){
-//    MadAssistantTheme {
-//        LegalCard()
-//    }
-//}
 
 @Composable
-fun LegalCard(
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit
+private fun FeatureBadge(
+    icon: Painter,
+    label: String
 ) {
-    Card (
-        modifier = Modifier
-            .padding(start = 24.dp, end = 24.dp, bottom = 24.dp)
-            .fillMaxWidth()
-            .clickable(onClick = onClick),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        shape = RoundedCornerShape(24.dp),
-        elevation = CardDefaults.cardElevation(8.dp)
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.width(80.dp)
     ) {
-        Row(
-            modifier
-                .fillMaxWidth().padding(16.dp),
-            Arrangement.Center,
-            Alignment.CenterVertically
+        Box(
+            modifier = Modifier
+                .size(40.dp)
+                .clip(CircleShape)
+                .background(ThemeGreen.copy(alpha = 0.12f)),
+            contentAlignment = Alignment.Center
         ) {
-            Image(painterResource(R.drawable.file_document_multiple_outline), contentDescription = null,
-                modifier.size(36.dp).padding(end = 6.dp),
-                colorFilter = ColorFilter.tint(LocalCustomColors.current.lgBg)
-                )
-          Column(
-                    modifier = Modifier.padding(start = 8.dp)
-                    ) {
-                Text(text = stringResource(R.string.settings_termsDescription), modifier = Modifier.padding(2.dp),
-                    style = MaterialTheme.typography.headlineSmall,
-                    color = MaterialTheme.colorScheme.onPrimary,
-                    fontWeight = FontWeight.Bold)
-                Text(text = stringResource(R.string.settings_termsDescription), modifier = Modifier.padding(2.dp),
-                    color = MaterialTheme.colorScheme.onSecondary,
-                    fontWeight = FontWeight.W400,
-                    style = MaterialTheme.typography.bodySmall
-                )
-            }
-
+            Icon(
+                painter = icon,
+                contentDescription = null,
+                tint = ThemeGreen,
+                modifier = Modifier.size(20.dp)
+            )
         }
-
+        Spacer(modifier = Modifier.height(6.dp))
+        Text(
+            text = label,
+            fontSize = 10.sp,
+            fontWeight = FontWeight.Medium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = TextAlign.Center,
+            lineHeight = 12.sp,
+            maxLines = 2
+        )
     }
 }

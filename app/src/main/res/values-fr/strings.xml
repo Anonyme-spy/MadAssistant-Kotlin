@@ -119,6 +119,27 @@
     <!-- Section Headers -->
     <string name="home_section_stats">Statistiques</string>
     <string name="home_section_sos">Urgence SOS</string>
+    <string name="firstaid_title">Premiers secours</string>
+    <string name="firstaid_subtitle">Guide des procédures d\'urgence</string>
+    <string name="firstaid_search_placeholder">Rechercher des procédures...</string>
+    <string name="firstaid_category_all">Tous</string>
+    <string name="firstaid_category_respiratory">Respiratoire</string>
+    <string name="firstaid_category_cardiac">Cardiaque</string>
+    <string name="firstaid_category_emergency">Urgence</string>
+    <string name="firstaid_no_results">Aucun résultat trouvé</string>
+    <string name="firstaid_call_emergency">Appeler les urgences</string>
+
+
+    <!-- Contacts Screen -->
+    <string name="contacts_search_placeholder">Rechercher des contacts...</string>
+    <string name="contacts_category_all">Tous</string>
+    <string name="contacts_category_health">Santé</string>
+    <string name="contacts_category_security">Sécurité</string>
+    <string name="contacts_category_fire">Incendie</string>
+    <string name="contacts_category_insurance">Assurance</string>
+    <string name="contacts_no_results">Aucun contact trouvé</string>
+    <string name="contacts_phone_numbers">Numéros de téléphone</string>
+
 
 
 
